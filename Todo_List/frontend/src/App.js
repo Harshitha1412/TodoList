@@ -4,19 +4,18 @@ import EditTask from './Components/EditTask';
 import TaskList from './Components/TaskList';
 import './Styles/App.css';
 
+const API_URL = 'https://todo-list-1-gamma.vercel.app/api/tasks';
+
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentView, setCurrentView] = useState('list');
   const [taskToEdit, setTaskToEdit] = useState(null);
-  
-  
   const [currentPage, setCurrentPage] = useState(1);
-  const [tasksPerPage] = useState(4); 
+  const [tasksPerPage] = useState(4);
 
-  
   useEffect(() => {
-    fetch('http://localhost:5000/api/tasks')
+    fetch(API_URL)
       .then(response => response.json())
       .then(data => setTasks(data))
       .catch(error => console.error('Error fetching tasks:', error));
@@ -24,7 +23,7 @@ const App = () => {
 
   const addTask = (task) => {
     task.id = tasks.length ? tasks[tasks.length - 1].id + 1 : 1;
-    fetch('http://localhost:5000/api/tasks', {
+    fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +37,7 @@ const App = () => {
   };
 
   const updateTask = (updatedTask) => {
-    fetch(`http://localhost:5000/api/tasks/${updatedTask.id}`, {
+    fetch(`${API_URL}/${updatedTask.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -54,7 +53,7 @@ const App = () => {
   };
 
   const deleteTask = (id) => {
-    fetch(`http://localhost:5000/api/tasks/${id}`, { method: 'DELETE' })
+    fetch(`${API_URL}/${id}`, { method: 'DELETE' })
       .then(() => {
         setTasks(tasks.filter(task => task.id !== id));
       })
@@ -71,23 +70,19 @@ const App = () => {
     setCurrentView('list');
   };
 
-  
   const filteredTasks = tasks.filter(task =>
     task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     task.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  
   const indexOfLastTask = currentPage * tasksPerPage;
   const indexOfFirstTask = indexOfLastTask - tasksPerPage;
   const paginatedTasks = filteredTasks.slice(indexOfFirstTask, indexOfLastTask);
 
-  
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  
   const totalPages = Math.ceil(filteredTasks.length / tasksPerPage);
 
   return (
