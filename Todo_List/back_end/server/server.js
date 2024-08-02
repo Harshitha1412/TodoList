@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
-app.use(cors());app.use(cors({
+app.use(cors({
   origin: 'https://todo-list-phi-ten-59.vercel.app' 
 }));app.use(express.json());
 
