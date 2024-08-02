@@ -6,8 +6,9 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
-app.use(express.json());
+app.use(cors());app.use(cors({
+  origin: 'https://todo-list-omey2zmht-harshithas-projects-4fad4851.vercel.app/' 
+}));app.use(express.json());
 
 const tasksFilePath = path.join(__dirname, 'tasks.json');
 
