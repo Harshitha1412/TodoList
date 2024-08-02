@@ -8,7 +8,8 @@ const PORT = 5000;
 
 app.use(cors({
   origin: 'https://todo-list-phi-ten-59.vercel.app' 
-}));app.use(express.json());
+}));
+app.use(express.json());
 
 const tasksFilePath = path.join(__dirname, 'tasks.json');
 
