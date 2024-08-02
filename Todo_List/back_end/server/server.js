@@ -70,14 +70,7 @@ app.delete('/api/tasks/:id', (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.send('Server is up and running');
-});
 
-
-app.all('*', (req, res) => {
-  res.status(404).send('Not Found');
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
