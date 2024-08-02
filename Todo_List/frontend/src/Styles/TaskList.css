@@ -1,0 +1,21 @@
+.TaskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+  }
+ 
+  .TaskList-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .TaskList-item:last-child {
+    border-bottom: none;
+  }
+  .Notebook-container{
+    width:750px;
+    height: 40px;
+    
+  }
+  

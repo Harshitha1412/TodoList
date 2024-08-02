@@ -1,0 +1,97 @@
+.App {
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.5); /* White background with some transparency */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../Styles/img1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    
+    
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: auto; 
+    padding: 20px 0; 
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #0056b3;
+  }
+  
+  .pagination button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    
+  }
+  
+  .search-bar {
+    width: 400px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
+    border-radius: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  }
+  
+  .search-bar input[type="text"] {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    caret-color: rgb(255, 81, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding-left: 15px;
+    letter-spacing: 0.8px;
+    color: rgb(19, 19, 19);
+    font-size: 13.4px;
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #0056b3;
+  }
+  

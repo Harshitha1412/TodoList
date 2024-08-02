@@ -1,0 +1,19 @@
+{
+  "name": "my-todo-app",
+  "version": "1.0.0",
+  "description": "A simple to-do app using React and Node.js",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
